@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #544ffd;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        nav {
+            background-color: #302afc;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding: 20px;
+        }
+        .moto-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .moto-item {
+            margin: 10px;
+            text-align: center;
+            width: 30%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .moto-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .moto-item h3 {
+            margin: 10px 0;
+        }
+        .moto-item p {
+            padding: 0 15px 10px;
+        }
+        .moto-details {
+            display: none;
+            padding: 10px 15px;
+            background-color: #f0f0f0;
+            border-top: 1px solid #ddd;
+            text-align: left;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #302afc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        footer {
+            background-color: #302afc;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        function toggleDetails(motoId) {
+            var details = document.getElementById(motoId);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Bienvenidos a la Página de Motos</h1>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#home">Inicio</a>
+        <a href="#motos">Motos</a>
+        <a href="#especificaciones">Especificaciones</a>
+        <a href="#sobre-nosotros">Sobre Nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- Main content -->
+    <section id="home">
+        <h2>Bienvenidos a nuestra tienda de motos</h2>
+        <p>En esta página encontrarás las mejores motos, con las especificaciones más completas y fotos increíbles. Ofrecemos una amplia variedad de motos, desde deportivas hasta cruiser, y nos aseguramos de ofrecerte un excelente servicio de atención al cliente.</p>
+    </section>
+
+    <!-- New About Us Section -->
+    <section id="sobre-nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos una empresa con más de 10 años de experiencia en la venta de motos. Nuestro objetivo es proporcionar a nuestros clientes motos de la más alta calidad y el mejor servicio postventa. Si buscas una moto para adrenalina, viajes largos o aventuras fuera de la carretera, tenemos lo que necesitas.</p>
+    </section>
+
+    <section id="motos">
+        <h2>Motos Disponibles</h2>
+        <div class="moto-list">
+            <div class="moto-item">
+                <img src="https://iwatamotos-yamaha.com/wp-content/uploads/2023/08/MT09-2022-COLOR_NEGRO.jpg" alt="Moto Deportiva">
+                <h3>Moto Deportiva</h3>
+                <p>Una moto de alto rendimiento para los amantes de la velocidad.</p>
+                <button onclick="toggleDetails('deportiva-details')">Saber más</button>
+                <div class="moto-details" id="deportiva-details">
+                    <p>Motor: 4 Tiempos, Potencia: 200 HP, Velocidad máxima: 300 km/h. Esta moto deportiva es ideal para quienes buscan velocidad y rendimiento en pista. Con su diseño aerodinámico y tecnología avanzada, disfrutarás de una experiencia de conducción única.</p>
+                </div>
+            </div>
+            <div class="moto-item">
+                <img src="https://www.rutamotor.com/wp-content/uploads/2020/12/bmw-r18-rutamotor-02.jpg" alt="Moto Cruiser">
+                <h3>Moto Cruiser</h3>
+                <p>Ideal para viajes largos y confort en la carretera.</p>
+                <button onclick="toggleDetails('cruiser-details')">Saber más</button>
+                <div class="moto-details" id="cruiser-details">
+                    <p>Motor: V2, Potencia: 150 HP, Velocidad máxima: 180 km/h. La moto cruiser es perfecta para aquellos que disfrutan de viajes largos y cómodos. Su postura relajada y su diseño elegante te aseguran confort y estilo en cada trayecto.</p>
+                </div>
+            </div>
+            <div class="moto-item">
+                <img src="https://www.motosausio.com/wp-content/uploads/2021/09/yz-250-monster.jpg" alt="Moto Off-Road">
+                <h3>Moto Off-Road</h3>
+                <p>Perfecta para aventuras fuera de la carretera.</p>
+                <button onclick="toggleDetails('offroad-details')">Saber más</button>
+                <div class="moto-details" id="offroad-details">
+                    <p>Motor: 2 Tiempos, Potencia: 100 HP, Velocidad máxima: 120 km/h. Esta moto es ideal para aventuras extremas fuera de la carretera. Con suspensión de alta calidad y neumáticos diseñados para terrenos difíciles, es perfecta para quienes buscan desafíos en la naturaleza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="especificaciones">
+        <h2>Especificaciones Técnicas</h2>
+        <table>
+            <tr>
+                <th>Modelo</th>
+                <th>Motor</th>
+                <th>Potencia</th>
+                <th>Velocidad Máxima</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Moto Deportiva</td>
+                <td>4 Tiempos</td>
+                <td>200 HP</td>
+                <td>300 km/h</td>
+                <td>$15,000</td>
+            </tr>
+            <tr>
+                <td>Moto Cruiser</td>
+                <td>V2</td>
+                <td>150 HP</td>
+                <td>180 km/h</td>
+                <td>$12,000</td>
+            </tr>
+            <tr>
+                <td>Moto Off-Road</td>
+                <td>2 Tiempos</td>
+                <td>100 HP</td>
+                <td>120 km/h</td>
+                <td>$8,000</td>
+            </tr>
+        </table>
+    
+</section>
+
+    <!-- Login Section -->
+    <section id="login">
+        <h2>Iniciar Sesión</h2>
+        <div class="login-container">
+            <form action="avance2.html" method="POST">
+                <input type="text" name="username" placeholder="Nombre de Usuario" required
